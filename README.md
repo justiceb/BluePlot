@@ -18,6 +18,14 @@ A few notes about this:
 ### Settings UI
 ![image](https://user-images.githubusercontent.com/7429922/214114128-f05785bc-608e-4229-a9dc-3f661a75f2c5.png)
 
+### Plot area right click menu
+![image](https://user-images.githubusercontent.com/7429922/214133278-5730a3e9-3591-41ad-bbc2-71eff53e35f5.png)
+
+| menu name        | Action        | 
+| ------------- |:-------------:| 
+| Clear Plot Config | Resets plot to default, empty config |
+| Properties | Opens the "Settings UI" |
+
 #### General notes about this:
 * Most of these settings directly correlate to properties of the LabVIEW XY graph control, I've just wrappered them nicely.
 * The most important aspect here is that all of the settings here are easily exported/imported by the Get/Load config API.  The intent here was to make it easy for users to save and load plot configuration.  I've observed that users will spend a significant amount of time customizing a plot to their liking for a particular task.
@@ -85,3 +93,7 @@ Whenever the user modifies a property via the plot icon menu, then I capture thi
 | sidebar visible | sidebar not visible   | 
 | ------------- |:-------------:|
 | ![image](https://user-images.githubusercontent.com/7429922/214132419-3faa8ec6-3cc7-481d-a5c4-f8dabc7ee9bc.png) | ![image](https://user-images.githubusercontent.com/7429922/214132382-82c14bca-b9ea-42d3-8f2a-36632b4decdc.png) |
+
+I find that users typically only need for the sidebar to be visible while they are modifying plot settings or channel names.  Otherwise, they collapse the sidebar so that screen real-estate is maximized for plotting area.
+
+
