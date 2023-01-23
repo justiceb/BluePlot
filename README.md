@@ -25,7 +25,7 @@ A few notes about this:
 * Note that the tick and grid line boxes are click-able and give you a picture enumeration to select from.
 * Value changes on this UI immediately propogate to the XY graph control which enables the user to see the affect of their changes immediately.  The "cancel" button will revert all changes appropriately.
 
-## Plot area right click menu
+### Plot area right click menu
 ![image](https://user-images.githubusercontent.com/7429922/214133278-5730a3e9-3591-41ad-bbc2-71eff53e35f5.png)
 
 | menu name        | Action        | 
