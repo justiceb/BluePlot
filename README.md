@@ -83,6 +83,7 @@ Whenever the user modifies a property via the plot icon menu, then I capture thi
 
 ### Design decision #2: Sidebar should be collapsable, maximizing the plotting space real-estate
 | sidebar visible | sidebar not visible   | 
+| ------------- |:-------------:|
 | ![image](https://user-images.githubusercontent.com/7429922/214132419-3faa8ec6-3cc7-481d-a5c4-f8dabc7ee9bc.png)
  |![image](https://user-images.githubusercontent.com/7429922/214132382-82c14bca-b9ea-42d3-8f2a-36632b4decdc.png)
 |
