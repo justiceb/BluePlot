@@ -65,4 +65,24 @@ A few notes about this:
 * The "Subcribed Names" and "Subscribed time to plot" callback VIs are optional, and only exist to communicate back to the developer when one of these values changes due to user input/interaction.  This information might drive decision-making in code that maintains the circular buffers.  For example, if the user is plotting 30 minutes of a channel name, then you might want to make sure that your ring buffer is expanded to 30 minutes of storage.
 
 ## Design Decisions
-### Design decision: 
+### Design decision #1: Expose all native properties of the LabVIEW XY Graph control, and utilize the graph menu
+![image](https://user-images.githubusercontent.com/7429922/214130823-99af60b0-57e4-4abb-a66e-8b48b774a219.png)
+
+If you click on the little plot icons, then this gives you access to a custom XY graph property menu.
+This menu is built into the XY graph control.
+There are things in this menu which cannot be recreated using G-code.  Like, G-code doesn't let you include nifty pictures in a right click menu.
+I decided early-on that I wanted to leverage this menu because I thought it seemed well thought-out, and I liked most of the features.
+This, consequently, meant that this package must properly capture all the properties that this menu can acess/modify when I get/load config.
+
+Another bit of weirdness:
+The plot icons in the sidebar don't actually belong to the XY graph that the user sees.
+This is because the plot icons and the user-viewable XY graph control are on different LabVIEW panes.
+This became necessary in order to build out the concept of a collapsable sidebar.
+What does this mean?
+Whenever the user modifies a property via the plot icon menu, then I capture this change via a LabVIEW event, and then mirror this change over to the user-viewable XY graph.  This ended up being fairly easy given that all changes via the plot icon menu produce a LabVIEW event.  (kudos to NI for that foresight.)
+
+### Design decision #2: Sidebar should be collapsable, maximizing the plotting space real-estate
+| sidebar visible | sidebar not visible   | 
+| ![image](https://user-images.githubusercontent.com/7429922/214132419-3faa8ec6-3cc7-481d-a5c4-f8dabc7ee9bc.png)
+ |![image](https://user-images.githubusercontent.com/7429922/214132382-82c14bca-b9ea-42d3-8f2a-36632b4decdc.png)
+|
