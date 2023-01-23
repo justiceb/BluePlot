@@ -14,7 +14,10 @@
 * Value changes on this UI immediately propogate to the XY graph control which enables the user to see the affect of their changes immediately.  The "cancel" button will revert all changes appropriately.
 
 ## API
+### High-level look at all the methods:
 ![image](https://user-images.githubusercontent.com/7429922/214123623-27da805d-14a2-4ed0-9528-7d544fe65cdf.png)
+
+### Individual methods:
 
 ![image](https://user-images.githubusercontent.com/7429922/214123580-34f78c18-0443-46c5-bc60-f0a231be1e2a.png)
 
