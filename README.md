@@ -45,3 +45,9 @@ It's easiest to look at the shipped BluePlotHandleDemo.lvclass as an example:
 | Callback - Get Plottable Names.vi      | Required      |  (none) | list of plottable names (string array) |
 | Callback - Subscribed Names.vi | Optional      |    (none) | list of plotted names (string array) |
 | Callback - Subscribed time to plot.vi | Optional      |   (none) |selected time to plot (DBL) |
+
+A few notes about this:
+* The "plottable names" affects the list of strings that will appear in the autofill dropdown box on the plot UI
+* The "Get Data by Name.vi" requires that you return the data history of a channel by name.  This means that you must have access to the history in some sort of lookup table.  The plot UI instance does not buffer or hang onto data like a LabVIEW strip-chart.  The challenge of how to buffer data is left to the end-user.  This was intentional because there are lots of ways to circularly buffer data, and I didn't want to marry data buffering to the plot UI.
+* The Demo showcases how the NI "ring buffer" pacakge can be used as a possible solution for creating/maintaining a circular buffer for data, which can then be accessed by the plot UI framework.
+* The "Subcribed Names" and "Subscribed time to plot" callback VIs are optional, and only exist to communicate back to the developer when one of these values changes due to user input/interaction.  This information might drive decision-making in code that maintains the circular buffers.  For example, if the user is plotting 30 minutes of a channel name, then you might want to make sure that your ring buffer is expanded to 30 minutes of storage.
