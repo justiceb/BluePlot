@@ -36,6 +36,7 @@ If you want to use this package, then you will need to do the work desribed in t
 
 First, you will need to create your own PlotHandle class, and override required Dynamic Dispatch methods.
 It's easiest to look at the shipped BluePlotHandleDemo.lvclass as an example:
+
 ![image](https://user-images.githubusercontent.com/7429922/214126756-2e5c1bf6-4648-449c-8480-3b455c57f4f3.png)
 
 | Override filename        | Required?           | Input  | Output  |
