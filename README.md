@@ -96,4 +96,29 @@ Whenever the user modifies a property via the plot icon menu, then I capture thi
 
 I find that users typically only need for the sidebar to be visible while they are modifying plot settings or channel names.  Otherwise, they collapse the sidebar so that screen real-estate is maximized for plotting area.
 
+### Design decision #3: This package does not buffer data history.  This is something the developer must implement.
+A LabVIEW strip-chart will buffer data history.
+This makes using strip-chart very easy to implement for a developer.
+You simply feed the latest value to the strip chart and allow for it to build/maintain history.
+Unfortunately, this paradigm has a relatively low complexity and performance ceiling.
 
+Conversely, this plotting tool is expected to enable the user to quickly change plotted channel names, and query this history on-demand.
+This generally means that it is expected that the developer is building and maintaining data history for channels in some sort of circular buffer tool with a channel name lookup index.
+Since there are many circular buffer solutions out in the world, I didn't want to marry or force the developer to use a specific circular buffer solution just to use this plotting UI.
+For convenience, the DEMO showcases how the NI variant ring buffer can be used gracefully with this package.
+Instead, I opted for this plotting UI to make 
+
+### Design decision #4: The user is only able to specify a "time to plot", which represents the number of seconds to plot from the current timestamp (now)
+This plotting UI is optimized for real-time, operational awareness viewing.
+The intended workflow looks like this:
+* DAQ acquires data (analag inputs, digital inputs, whatever you want)
+* This data is shoved into a circular buffer, in memory.  The buffer might only be 30 minutes of latest-value data
+* This plotting package UI accesses these circular buffers, for displaying real-time data
+* The user is able to adjust time-to-plot to select how much history to plot
+* "time to plot" changes are communicated in a callback to the developer, which might cause the developer to expand a ring buffer to match the user-requested history length.
+
+### Design decision #5: Multiple plots can be asynchronosly launched.  A plot handle is used to communicate with each instance
+It's expected that users might want to open and interact with multiple, concurrent plot instances.
+All of this code is reentrant, and that is very much and expectation of the workflow.
+
+Each launched plot instance returns a handle to the developer, which represents the developer's mechanism to interact with the plot instance via a plot handle API.
