@@ -3,6 +3,18 @@
 ### Plot UI
 ![Infographic - UI](https://user-images.githubusercontent.com/7429922/214113694-722613c1-af19-4bfa-bf8f-3cb79cd2c614.png)
 
+### Autofill channel name UI
+![image](https://user-images.githubusercontent.com/7429922/214129788-0b82c285-09d1-485f-816e-52695dcc978e.png)
+
+A few notes about this:
+- Click in the white text box to start typing in a channel name
+- A listbox will appear with a list of all channel names that "MATCH PATTERN" with the current value of the user entry textbox
+- Note that this listbox is a separate window, and will conveniently not be cropped by the size of the plot instance window.  (observe this in the screenshot above)
+- Use up/down arrow keys to navigate the listbox
+- Use return/enter keys or mouse click to make a listbox selection
+- dark blue color = current listbox selection
+- teal blue color = hover-over visualization for cursor
+
 ### Settings UI
 ![image](https://user-images.githubusercontent.com/7429922/214114128-f05785bc-608e-4229-a9dc-3f661a75f2c5.png)
 
@@ -51,3 +63,6 @@ A few notes about this:
 * The "Get Data by Name.vi" requires that you return the data history of a channel by name.  This means that you must have access to the history in some sort of lookup table.  The plot UI instance does not buffer or hang onto data like a LabVIEW strip-chart.  The challenge of how to buffer data is left to the end-user.  This was intentional because there are lots of ways to circularly buffer data, and I didn't want to marry data buffering to the plot UI.
 * The Demo showcases how the NI "ring buffer" pacakge can be used as a possible solution for creating/maintaining a circular buffer for data, which can then be accessed by the plot UI framework.
 * The "Subcribed Names" and "Subscribed time to plot" callback VIs are optional, and only exist to communicate back to the developer when one of these values changes due to user input/interaction.  This information might drive decision-making in code that maintains the circular buffers.  For example, if the user is plotting 30 minutes of a channel name, then you might want to make sure that your ring buffer is expanded to 30 minutes of storage.
+
+## Design Decisions
+### Design decision: 
