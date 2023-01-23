@@ -106,7 +106,6 @@ Conversely, this plotting tool is expected to enable the user to quickly change 
 This generally means that it is expected that the developer is building and maintaining data history for channels in some sort of circular buffer tool with a channel name lookup index.
 Since there are many circular buffer solutions out in the world, I didn't want to marry or force the developer to use a specific circular buffer solution just to use this plotting UI.
 For convenience, the DEMO showcases how the NI variant ring buffer can be used gracefully with this package.
-Instead, I opted for this plotting UI to make 
 
 ### Design decision #4: The user is only able to specify a "time to plot", which represents the number of seconds to plot from the current timestamp (now)
 This plotting UI is optimized for real-time, operational awareness viewing.
