@@ -30,3 +30,17 @@
 ![image](https://user-images.githubusercontent.com/7429922/214123784-4c2e7578-3725-456f-a0c2-9368f3688b68.png)
 
 ![image](https://user-images.githubusercontent.com/7429922/214123801-29dc21a1-bc6b-42d6-a2d1-766e129b15bc.png)
+
+## Developer Guide
+If you want to use this package, then you will need to do the work desribed in the section below.
+
+First, you will need to create your own PlotHandle class, and override required Dynamic Dispatch methods.
+It's easiest to look at the shipped BluePlotHandleDemo.lvclass as an example:
+![image](https://user-images.githubusercontent.com/7429922/214126756-2e5c1bf6-4648-449c-8480-3b455c57f4f3.png)
+
+| Override filename        | Required?           | Input  | Output  |
+| ------------- |:-------------:| -----:| -----:|
+| Callback - Get Data by Name.vi      | Required | Name (string) | Data (to be sent to the plot) |
+| Callback - Get Plottable Names.vi      | Required      |  (none) | list of plottable names (string array) |
+| Callback - Subscribed Names.vi | Optional      |    (none) | list of plotted names (string array) |
+| Callback - Subscribed time to plot.vi | Optional      |   (none) |selected time to plot (DBL) |
