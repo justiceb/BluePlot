@@ -1,92 +1,123 @@
 # BluePlot
+## User Interface guide
+### Plot UI
+![Infographic - UI](https://user-images.githubusercontent.com/7429922/214113694-722613c1-af19-4bfa-bf8f-3cb79cd2c614.png)
 
+### Autofill channel name UI
+![image](https://user-images.githubusercontent.com/7429922/214129788-0b82c285-09d1-485f-816e-52695dcc978e.png)
 
+A few notes about this:
+- Click in the white text box to start typing in a channel name
+- A listbox will appear with a list of all channel names that "MATCH PATTERN" with the current value of the user entry textbox
+- Note that this listbox is a separate window, and will conveniently not be cropped by the size of the plot instance window.  (observe this in the screenshot above)
+- Use up/down arrow keys to navigate the listbox
+- Use return/enter keys or mouse click to make a listbox selection
+- dark blue color = current listbox selection
+- teal blue color = hover-over visualization for cursor
 
-## Getting started
+### Settings UI
+![image](https://user-images.githubusercontent.com/7429922/214114128-f05785bc-608e-4229-a9dc-3f661a75f2c5.png)
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+#### General notes about this:
+* Most of these settings directly correlate to properties of the LabVIEW XY graph control, I've just wrappered them nicely.
+* The most important aspect here is that all of the settings here are easily exported/imported by the Get/Load config API.  The intent here was to make it easy for users to save and load plot configuration.  I've observed that users will spend a significant amount of time customizing a plot to their liking for a particular task.
+* This package only suports up to 2 y-axes: a left and a right axis.  This is why you only see 2 y-axes on the settings page.  My opinion is that multiple y-axes on the same axis can get too messy and usually means that the user should just build multiple plots.
+* Note that the tick and grid line boxes are click-able and give you a picture enumeration to select from.
+* Value changes on this UI immediately propogate to the XY graph control which enables the user to see the affect of their changes immediately.  The "cancel" button will revert all changes appropriately.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+### Plot area right click menu
+![image](https://user-images.githubusercontent.com/7429922/214133278-5730a3e9-3591-41ad-bbc2-71eff53e35f5.png)
 
-## Add your files
+| menu name        | Action        | 
+| ------------- |:-------------:| 
+| Clear Plot Config | Resets plot to default, empty config |
+| Properties | Opens the "Settings UI" |
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+## API
+### High-level look at all the methods:
+![image](https://user-images.githubusercontent.com/7429922/214123623-27da805d-14a2-4ed0-9528-7d544fe65cdf.png)
 
-```
-cd existing_repo
-git remote add origin https://gitlab.blueorigin.com/dsce/vipcs/betterdraganddrop.git
-git branch -M main
-git push -uf origin main
-```
+### Individual methods:
 
-## Integrate with your tools
+![image](https://user-images.githubusercontent.com/7429922/214123580-34f78c18-0443-46c5-bc60-f0a231be1e2a.png)
 
-- [ ] [Set up project integrations](https://gitlab.blueorigin.com/dsce/vipcs/betterdraganddrop/-/settings/integrations)
+![image](https://user-images.githubusercontent.com/7429922/214123641-42095607-e501-47d5-97a0-8bd0d48a6c30.png)
 
-## Collaborate with your team
+![image](https://user-images.githubusercontent.com/7429922/214123677-144a96fc-8983-409b-98d5-2a94c7aec2fa.png)
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+![image](https://user-images.githubusercontent.com/7429922/214123711-2560a16c-3150-406e-a56c-3b4c5b09338f.png)
 
-## Test and Deploy
+![image](https://user-images.githubusercontent.com/7429922/214123784-4c2e7578-3725-456f-a0c2-9368f3688b68.png)
 
-Use the built-in continuous integration in GitLab.
+![image](https://user-images.githubusercontent.com/7429922/214123801-29dc21a1-bc6b-42d6-a2d1-766e129b15bc.png)
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+## Developer Guide
+If you want to use this package, then you will need to do the work desribed in the section below.
 
-***
+First, you will need to create your own PlotHandle class, and override required Dynamic Dispatch methods.
+It's easiest to look at the shipped BluePlotHandleDemo.lvclass as an example:
 
-# Editing this README
+![image](https://user-images.githubusercontent.com/7429922/214126756-2e5c1bf6-4648-449c-8480-3b455c57f4f3.png)
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
+| Override filename        | Required?           | Input  | Output  |
+| ------------- |:-------------:| -----:| -----:|
+| Callback - Get Data by Name.vi      | Required | Name (string) | Data (to be sent to the plot) |
+| Callback - Get Plottable Names.vi      | Required      |  (none) | list of plottable names (string array) |
+| Callback - Subscribed Names.vi | Optional      |    (none) | list of plotted names (string array) |
+| Callback - Subscribed time to plot.vi | Optional      |   (none) |selected time to plot (DBL) |
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+A few notes about this:
+* The "plottable names" affects the list of strings that will appear in the autofill dropdown box on the plot UI
+* The "Get Data by Name.vi" requires that you return the data history of a channel by name.  This means that you must have access to the history in some sort of lookup table.  The plot UI instance does not buffer or hang onto data like a LabVIEW strip-chart.  The challenge of how to buffer data is left to the end-user.  This was intentional because there are lots of ways to circularly buffer data, and I didn't want to marry data buffering to the plot UI.
+* The Demo showcases how the NI "ring buffer" pacakge can be used as a possible solution for creating/maintaining a circular buffer for data, which can then be accessed by the plot UI framework.
+* The "Subcribed Names" and "Subscribed time to plot" callback VIs are optional, and only exist to communicate back to the developer when one of these values changes due to user input/interaction.  This information might drive decision-making in code that maintains the circular buffers.  For example, if the user is plotting 30 minutes of a channel name, then you might want to make sure that your ring buffer is expanded to 30 minutes of storage.
 
-## Name
-Choose a self-explaining name for your project.
+## Design Decisions
+### Design decision #1: Expose all native properties of the LabVIEW XY Graph control, and utilize the graph menu
+![image](https://user-images.githubusercontent.com/7429922/214130823-99af60b0-57e4-4abb-a66e-8b48b774a219.png)
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+If you click on the little plot icons, then this gives you access to a custom XY graph property menu.
+This menu is built into the XY graph control.
+There are things in this menu which cannot be recreated using G-code.  Like, G-code doesn't let you include nifty pictures in a right click menu.
+I decided early-on that I wanted to leverage this menu because I thought it seemed well thought-out, and I liked most of the features.
+This, consequently, meant that this package must properly capture all the properties that this menu can acess/modify when I get/load config.
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+Another bit of weirdness:
+The plot icons in the sidebar don't actually belong to the XY graph that the user sees.
+This is because the plot icons and the user-viewable XY graph control are on different LabVIEW panes.
+This became necessary in order to build out the concept of a collapsable sidebar.
+What does this mean?
+Whenever the user modifies a property via the plot icon menu, then I capture this change via a LabVIEW event, and then mirror this change over to the user-viewable XY graph.  This ended up being fairly easy given that all changes via the plot icon menu produce a LabVIEW event.  (kudos to NI for that foresight.)
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+### Design decision #2: Sidebar should be collapsable, maximizing the plotting space real-estate
+| sidebar visible | sidebar not visible   | 
+| ------------- |:-------------:|
+| ![image](https://user-images.githubusercontent.com/7429922/214132419-3faa8ec6-3cc7-481d-a5c4-f8dabc7ee9bc.png) | ![image](https://user-images.githubusercontent.com/7429922/214132382-82c14bca-b9ea-42d3-8f2a-36632b4decdc.png) |
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+I find that users typically only need for the sidebar to be visible while they are modifying plot settings or channel names.  Otherwise, they collapse the sidebar so that screen real-estate is maximized for plotting area.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+### Design decision #3: This package does not buffer data history.  This is something the developer must implement.
+A LabVIEW strip-chart will buffer data history.
+This makes using strip-chart very easy to implement for a developer.
+You simply feed the latest value to the strip chart and allow for it to build/maintain history.
+Unfortunately, this paradigm has a relatively low complexity and performance ceiling.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+Conversely, this plotting tool is expected to enable the user to quickly change plotted channel names, and query this history on-demand.
+This generally means that it is expected that the developer is building and maintaining data history for channels in some sort of circular buffer tool with a channel name lookup index.
+Since there are many circular buffer solutions out in the world, I didn't want to marry or force the developer to use a specific circular buffer solution just to use this plotting UI.
+For convenience, the DEMO showcases how the NI variant ring buffer can be used gracefully with this package.
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+### Design decision #4: The user is only able to specify a "time to plot", which represents the number of seconds to plot from the current timestamp (now)
+This plotting UI is optimized for real-time, operational awareness viewing.
+The intended workflow looks like this:
+* DAQ acquires data (analag inputs, digital inputs, whatever you want)
+* This data is shoved into a circular buffer, in memory.  The buffer might only be 30 minutes of latest-value data
+* This plotting package UI accesses these circular buffers, for displaying real-time data
+* The user is able to adjust time-to-plot to select how much history to plot
+* "time to plot" changes are communicated in a callback to the developer, which might cause the developer to expand a ring buffer to match the user-requested history length.
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+### Design decision #5: Multiple plots can be asynchronosly launched.  A plot handle is used to communicate with each instance
+It's expected that users might want to open and interact with multiple, concurrent plot instances.
+All of this code is reentrant, and that is very much and expectation of the workflow.
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+Each launched plot instance returns a handle to the developer, which represents the developer's mechanism to interact with the plot instance via a plot handle API.
