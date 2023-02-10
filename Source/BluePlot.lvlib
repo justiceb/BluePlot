@@ -9,6 +9,7 @@
 </Property>
 	<Item Name="Classes" Type="Folder">
 		<Item Name="BluePlotHandle.lvclass" Type="LVClass" URL="../Classes/BluePlotHandle/BluePlotHandle.lvclass"/>
+		<Item Name="BlueSinglePlotConfig.lvclass" Type="LVClass" URL="../Classes/BlueSinglePlotConfig/BlueSinglePlotConfig.lvclass"/>
 	</Item>
 	<Item Name="SubVIs" Type="Folder">
 		<Property Name="NI.LibItem.Scope" Type="Int">2</Property>
