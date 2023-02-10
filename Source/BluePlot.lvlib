@@ -22,6 +22,7 @@
 		<Item Name="Get Oldest Time to Plot.vi" Type="VI" URL="../SubVIs/Get Oldest Time to Plot.vi"/>
 		<Item Name="has changed boolen - init first call.vi" Type="VI" URL="../SubVIs/Utilities/has changed boolen - init first call.vi"/>
 		<Item Name="has changed dbl first call.vi" Type="VI" URL="../SubVIs/Utilities/has changed dbl first call.vi"/>
+		<Item Name="Load 1PLOT.vi" Type="VI" URL="../SubVIs/Load 1PLOT.vi"/>
 		<Item Name="Plot add row if filled.vi" Type="VI" URL="../SubVIs/Plot add row if filled.vi"/>
 		<Item Name="Plot add row.vi" Type="VI" URL="../SubVIs/Plot add row.vi"/>
 		<Item Name="Plot attribute value change event.vi" Type="VI" URL="../SubVIs/Plot attribute value change event.vi"/>
@@ -60,6 +61,7 @@
 		<Item Name="Plots listbox popout size.vi" Type="VI" URL="../SubVIs/Listbox Popout/Plots listbox popout size.vi"/>
 		<Item Name="Plots Listbox Popout.vi" Type="VI" URL="../SubVIs/Listbox Popout/Plots Listbox Popout.vi"/>
 		<Item Name="rising edge.vi" Type="VI" URL="../SubVIs/Utilities/rising edge.vi"/>
+		<Item Name="Save 1PLOT.vi" Type="VI" URL="../SubVIs/Save 1PLOT.vi"/>
 		<Item Name="string array to csv.vi" Type="VI" URL="../SubVIs/Utilities/string array to csv.vi"/>
 		<Item Name="subscribed name change.vi" Type="VI" URL="../SubVIs/subscribed name change.vi"/>
 		<Item Name="truncate data history.vi" Type="VI" URL="../SubVIs/truncate data history.vi"/>
@@ -69,6 +71,7 @@
 	</Item>
 	<Item Name="Typedefs" Type="Folder">
 		<Item Name="autocomplete key focus states.ctl" Type="VI" URL="../SubVIs/autocomplete string/autocomplete key focus states.ctl"/>
+		<Item Name="load config mode.ctl" Type="VI" URL="../TypeDefs/load config mode.ctl"/>
 		<Item Name="Plot active mode.ctl" Type="VI" URL="../TypeDefs/Plot active mode.ctl"/>
 		<Item Name="plot attributes V2.ctl" Type="VI" URL="../TypeDefs/plot attributes V2.ctl"/>
 		<Item Name="Plot axis gui refs.ctl" Type="VI" URL="../TypeDefs/Plot axis gui refs.ctl"/>
@@ -93,6 +96,7 @@
 		<Item Name="plot vertical grid pic ring.ctl" Type="VI" URL="../SubVIs/vert grid/plot vertical grid pic ring.ctl"/>
 		<Item Name="plot while loop data.ctl" Type="VI" URL="../TypeDefs/plot while loop data.ctl"/>
 		<Item Name="Plots listbox popout refs.ctl" Type="VI" URL="../SubVIs/Listbox Popout/Plots listbox popout refs.ctl"/>
+		<Item Name="Save 1PLOT config.ctl" Type="VI" URL="../TypeDefs/Save 1PLOT config.ctl"/>
 	</Item>
 	<Item Name="BluePlot API POLY.vi" Type="VI" URL="../BluePlot API POLY.vi"/>
 	<Item Name="BluePlot Main.vi" Type="VI" URL="../BluePlot Main.vi">
