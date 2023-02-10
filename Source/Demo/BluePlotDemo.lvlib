@@ -11,7 +11,7 @@
 		<Item Name="BluePlotHandleDemo.lvclass" Type="LVClass" URL="../Classes/BluePlotHandleDemo/BluePlotHandleDemo.lvclass"/>
 	</Item>
 	<Item Name="SubVIs" Type="Folder">
-		<Property Name="NI.LibItem.Scope" Type="Int">2</Property>
+		<Property Name="NI.LibItem.Scope" Type="Int">1</Property>
 		<Item Name="Demo Names.ctl" Type="VI" URL="../SubVIs/Demo Names.ctl"/>
 		<Item Name="New buffers.vi" Type="VI" URL="../SubVIs/New buffers.vi"/>
 		<Item Name="ring buffer data.ctl" Type="VI" URL="../SubVIs/ring buffer data.ctl"/>
