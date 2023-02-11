@@ -71,6 +71,7 @@
 	</Item>
 	<Item Name="Typedefs" Type="Folder">
 		<Item Name="autocomplete key focus states.ctl" Type="VI" URL="../SubVIs/autocomplete string/autocomplete key focus states.ctl"/>
+		<Item Name="BlueMultiPlot Inputs.ctl" Type="VI" URL="../TypeDefs/BlueMultiPlot Inputs.ctl"/>
 		<Item Name="load config mode.ctl" Type="VI" URL="../TypeDefs/load config mode.ctl"/>
 		<Item Name="Plot active mode.ctl" Type="VI" URL="../TypeDefs/Plot active mode.ctl"/>
 		<Item Name="plot attributes V2.ctl" Type="VI" URL="../TypeDefs/plot attributes V2.ctl"/>
