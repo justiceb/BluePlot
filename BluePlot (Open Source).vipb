@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-01-22 11:47:01" Modified_Date="2023-02-10 20:13:47" Creator="bjustice" Comments="" ID="484467e38fdc161a08628cebe3ae1a62">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-01-22 11:47:01" Modified_Date="2023-02-12 10:12:48" Creator="bjustice" Comments="" ID="79a58c63814c03bfb7d233d33674a426">
   <Library_General_Settings>
     <Package_File_Name>Blue_Origin_lib_BluePlot_(Open_Source)</Package_File_Name>
-    <Library_Version>1.4.5.13</Library_Version>
+    <Library_Version>1.4.6.14</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>Source</Library_Source_Folder>
     <Library_Output_Folder>.</Library_Output_Folder>
@@ -338,7 +338,7 @@ https://github.com/justiceb/BluePlot</Description>
         <Path>Source\Classes\BluePlotHandle\Valid.vi</Path>
         <VI_Title>Is Handle Valid</VI_Title>
       </Items_Data>
-      <GUID>32B6A71BC2460D24517273EC7549DB76</GUID>
+      <GUID>6582FA3CC3F3FD84DFE4CF4049D3C282</GUID>
     </Functions_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>
