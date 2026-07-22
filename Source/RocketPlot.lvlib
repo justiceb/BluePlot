@@ -204,6 +204,7 @@
 		<Item Name="plot updated return data.ctl" Type="VI" URL="../TypeDefs/plot updated return data.ctl"/>
 		<Item Name="TimeZone.ctl" Type="VI" URL="../TypeDefs/TimeZone.ctl"/>
 		<Item Name="AxisFocus.ctl" Type="VI" URL="../TypeDefs/AxisFocus.ctl"/>
+		<Item Name="panel mode.ctl" Type="VI" URL="../TypeDefs/panel mode.ctl"/>
 	</Item>
 	<Item Name="RocketPlotShortcuts.lvclass" Type="LVClass" URL="../Classes/RocketPlotShortcuts/RocketPlotShortcuts.lvclass"/>
 	<Item Name="TipTablePanel.lvclass" Type="LVClass" URL="../Classes/TipTablePanel/TipTablePanel.lvclass"/>
