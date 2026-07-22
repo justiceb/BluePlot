@@ -19,4 +19,5 @@
 	<Item Name="Demo_BjusticeData.vi" Type="VI" URL="../../Demo_BjusticeData.vi"/>
 	<Item Name="Demo_NIringData.vi" Type="VI" URL="../../Demo_NIringData.vi"/>
 	<Item Name="Demo_PlotMusic.vi" Type="VI" URL="../../Demo_PlotMusic.vi"/>
+	<Item Name="Demo_PlotMusic_app.vi" Type="VI" URL="../../Demo_PlotMusic_app.vi"/>
 </Library>

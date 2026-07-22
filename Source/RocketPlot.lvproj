@@ -26,12 +26,6 @@
 		<Item Name="RocketPlotDemo.lvlib" Type="Library" URL="../Demo/RocketPlotDemo.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
-				<Item Name="MGI Caller&apos;s VI Reference.vi" Type="VI" URL="/&lt;userlib&gt;/_MGI/Application Control/MGI VI Reference/MGI Caller&apos;s VI Reference.vi"/>
-				<Item Name="MGI Current VI&apos;s Reference.vi" Type="VI" URL="/&lt;userlib&gt;/_MGI/Application Control/MGI VI Reference/MGI Current VI&apos;s Reference.vi"/>
-				<Item Name="MGI Level&apos;s VI Reference.vi" Type="VI" URL="/&lt;userlib&gt;/_MGI/Application Control/MGI VI Reference/MGI Level&apos;s VI Reference.vi"/>
-				<Item Name="MGI Origin at Top Left.vi" Type="VI" URL="/&lt;userlib&gt;/_MGI/Application Control/MGI Origin at Top Left.vi"/>
-				<Item Name="MGI Top Level VI Reference.vi" Type="VI" URL="/&lt;userlib&gt;/_MGI/Application Control/MGI VI Reference/MGI Top Level VI Reference.vi"/>
-				<Item Name="MGI VI Reference.vi" Type="VI" URL="/&lt;userlib&gt;/_MGI/Application Control/MGI VI Reference.vi"/>
 				<Item Name="openg_application_control.lvlib" Type="Library" URL="/&lt;userlib&gt;/_OpenG.lib/appcontrol/appcontrol.llb/openg_application_control.lvlib"/>
 				<Item Name="openg_array.lvlib" Type="Library" URL="/&lt;userlib&gt;/_OpenG.lib/array/array.llb/openg_array.lvlib"/>
 				<Item Name="openg_error.lvlib" Type="Library" URL="/&lt;userlib&gt;/_OpenG.lib/error/error.llb/openg_error.lvlib"/>
@@ -195,6 +189,47 @@
 			</Item>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
+			<Item Name="Rocket Plot Music Demo" Type="EXE">
+				<Property Name="App_copyErrors" Type="Bool">true</Property>
+				<Property Name="App_INI_aliasGUID" Type="Str">{ABD59EAD-929D-4F98-AD46-C12E7EE39540}</Property>
+				<Property Name="App_INI_GUID" Type="Str">{27D89DA4-204A-4B15-B658-29E5D89AA4A0}</Property>
+				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
+				<Property Name="App_serverType" Type="Int">0</Property>
+				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{B7EDB095-1A3E-4671-A3C6-AED2E8EF334F}</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">Rocket Plot Music Demo</Property>
+				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
+				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
+				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
+				<Property Name="Bld_localDestDir" Type="Path">../builds/NI_AB_PROJECTNAME/Rocket Plot Music Demo</Property>
+				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
+				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{3F195ED2-493B-462A-B685-6107217E7C8A}</Property>
+				<Property Name="Bld_version.build" Type="Int">1</Property>
+				<Property Name="Bld_version.major" Type="Int">1</Property>
+				<Property Name="Destination[0].destName" Type="Str">Rocket Plot Music Demo.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/Rocket Plot Music Demo/Rocket Plot Music Demo.exe</Property>
+				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
+				<Property Name="Destination[0].type" Type="Str">App</Property>
+				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
+				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/Rocket Plot Music Demo/data</Property>
+				<Property Name="DestinationCount" Type="Int">2</Property>
+				<Property Name="Source[0].itemID" Type="Str">{1797A3C5-B4FA-45DB-BBE9-2E3D9806B808}</Property>
+				<Property Name="Source[0].type" Type="Str">Container</Property>
+				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/My Computer/RocketPlotDemo.lvlib/Demo_PlotMusic_app.vi</Property>
+				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
+				<Property Name="Source[1].type" Type="Str">VI</Property>
+				<Property Name="SourceCount" Type="Int">2</Property>
+				<Property Name="TgtF_companyName" Type="Str">Stoke Space</Property>
+				<Property Name="TgtF_fileDescription" Type="Str">Rocket Plot Music Demo</Property>
+				<Property Name="TgtF_internalName" Type="Str">Rocket Plot Music Demo</Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2026 Stoke Space</Property>
+				<Property Name="TgtF_productName" Type="Str">Rocket Plot Music Demo</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{C1862ADA-048A-4D7B-AA62-950D55D29D35}</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">Rocket Plot Music Demo.exe</Property>
+				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
+			</Item>
 			<Item Name="Source Distribution" Type="Source Distribution">
 				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
 				<Property Name="Bld_buildCacheID" Type="Str">{C4CD4487-253F-472F-8AC9-3B80E4C531B6}</Property>
