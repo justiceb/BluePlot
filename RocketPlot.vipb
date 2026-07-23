@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2026-07-20 10:27:41" Modified_Date="2026-07-22 10:59:05" Creator="Brent Justice" Comments="" ID="d101a41866c96f7d2966a691b0b4bbeb">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2026-07-20 10:27:41" Modified_Date="2026-07-23 09:23:44" Creator="Brent Justice" Comments="" ID="e22cd42d6c083cd15032da956e029b24">
   <Library_General_Settings>
     <Package_File_Name>BJustice_lib_RocketPlot</Package_File_Name>
-    <Library_Version>1.1.1.4</Library_Version>
+    <Library_Version>2.0.1.16</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>Source</Library_Source_Folder>
     <Library_Output_Folder>.</Library_Output_Folder>
@@ -343,7 +343,7 @@
         <Path>Source\Demo_PlotMusic.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>0FE795FD3ADED9391F71607EDB1C07DB</GUID>
+      <GUID>B0D47FA98BA8FE6026399DAB61591D64</GUID>
     </Functions_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>
