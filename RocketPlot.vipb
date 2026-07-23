@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2026-07-20 10:27:41" Modified_Date="2026-07-23 09:23:44" Creator="Brent Justice" Comments="" ID="e22cd42d6c083cd15032da956e029b24">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2026-07-20 10:27:41" Modified_Date="2026-07-23 09:42:12" Creator="Brent Justice" Comments="" ID="b47f0ab7a275db5a72d30ebf5142696c">
   <Library_General_Settings>
     <Package_File_Name>BJustice_lib_RocketPlot</Package_File_Name>
-    <Library_Version>2.0.1.16</Library_Version>
+    <Library_Version>2.0.2.17</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>Source</Library_Source_Folder>
     <Library_Output_Folder>.</Library_Output_Folder>
@@ -24,7 +24,6 @@
       <External_Dependencies>illuminatedg_lib_ig_oopanel &gt;= 0.5.1.38</External_Dependencies>
       <External_Dependencies>jdp_science_jsontext &gt;= 1.9.1.125</External_Dependencies>
       <External_Dependencies>jdp_science_lib_common_utilities &gt;= 1.4.2.19</External_Dependencies>
-      <External_Dependencies>mgi_lib_application_control &gt;= 1.1.1.10</External_Dependencies>
       <External_Dependencies>ni_lib_obj_ring_buffer &gt;= 3.0.0.2</External_Dependencies>
       <External_Dependencies>oglib_appcontrol &gt;= 6.0.0.10</External_Dependencies>
       <External_Dependencies>oglib_array &gt;= 6.0.1.20</External_Dependencies>
@@ -39,7 +38,6 @@
       <Direct_Dependencies>illuminatedg_lib_ig_oopanel-0.5.1.38</Direct_Dependencies>
       <Direct_Dependencies>jdp_science_jsontext-1.9.1.125</Direct_Dependencies>
       <Direct_Dependencies>jdp_science_lib_common_utilities-1.4.2.19</Direct_Dependencies>
-      <Direct_Dependencies>mgi_lib_application_control-1.1.1.10</Direct_Dependencies>
       <Direct_Dependencies>ni_lib_obj_ring_buffer-3.0.0.2</Direct_Dependencies>
       <Direct_Dependencies>oglib_appcontrol-6.0.0.10</Direct_Dependencies>
       <Direct_Dependencies>oglib_array-6.0.1.20</Direct_Dependencies>
@@ -343,7 +341,7 @@
         <Path>Source\Demo_PlotMusic.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>B0D47FA98BA8FE6026399DAB61591D64</GUID>
+      <GUID>5CD9356A1151A7370DB1CDDA1D102AA9</GUID>
     </Functions_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>
